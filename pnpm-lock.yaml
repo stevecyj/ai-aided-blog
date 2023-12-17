@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@element-plus/icons-vue':
+    specifier: ^2.3.1
+    version: 2.3.1(vue@3.3.8)
   create-stylelint:
     specifier: 0.3.0
     version: 0.3.0(typescript@5.2.2)

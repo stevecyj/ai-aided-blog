@@ -4,6 +4,8 @@ import path from "path";
 import viteEslint from "vite-plugin-eslint";
 import viteStylelint from "vite-plugin-stylelint";
 
+const resolve = (str: string): string =>
+  normalizePath(path.resolve(__dirname, str));
 const variablePath = normalizePath(path.resolve("./src/variables.scss"));
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -19,6 +21,11 @@ export default defineConfig({
       scss: {
         additionalData: `@import "${variablePath}";`
       }
+    }
+  },
+  resolve: {
+    alias: {
+      "@": resolve("src")
     }
   }
 });

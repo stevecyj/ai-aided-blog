@@ -9,19 +9,28 @@ export const constantRoutes: RouteRecordRaw[] = [
   {
     path: "/",
     name: "Home",
-    component: Layout
+    component: Layout,
     // redirect: "/dashboard",
-    // children: [
-    //   {
-    //     path: "/dashboard",
-    //     name: "Dashboard",
-    //     component: async () => await import("@/views/dashboard/index.vue"),
-    //     meta: {
-    //       title: "Dashboard",
-    //       icon: "dashboard"
-    //     }
-    //   }
-    // ]
+    children: [
+      {
+        path: "/article",
+        name: "Article",
+        component: async () => await import("@/views/article/ArticleIndex.vue"),
+        meta: {
+          title: "Article",
+          icon: "article"
+        }
+      },
+      {
+        path: "/member",
+        name: "Member",
+        component: async () => await import("@/views/member/MemberIndex.vue"),
+        meta: {
+          title: "Member",
+          icon: "member"
+        }
+      }
+    ]
   }
   // {
   //   path: "/login",

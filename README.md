@@ -125,6 +125,19 @@ and install/add `postcss-html` to our dev-dependencies, the error goes away.
 
 Although the error started appearing after the v14 update, it is still present at `stylelint` v15 and the latest `stylelint-config-torchbox` versions.
 
+### resolve alias
+
+ts.config.json
+
+```JS
+"compilerOptions":{
+    "paths":{
+    "@/*": ["./src/*"],
+    "baseUrl": ".",
+   },
+}
+```
+
 ## UnoCSS
 
 **注意: Vite 配置文件中如果有 PostCSS 配置的情况下会覆盖掉 post.config.js 的内容!**

@@ -38,6 +38,11 @@ export const constantRoutes: RouteRecordRaw[] = [
         path: "/blog/:id/edit",
         name: "BlogEdit",
         component: async () => await import("@/views/BlogEditor/BlogEditor.vue")
+      },
+      {
+        path: "/my-blogs",
+        name: "MyBlogs",
+        component: async () => await import("@/views/MyBlogs/MyBlogs.vue")
       }
     ]
   },

@@ -29,15 +29,20 @@ export const constantRoutes: RouteRecordRaw[] = [
           await import("@/views/UserProfile/UserProfile.vue")
       },
       {
-        path: "/blog-editor",
-        name: "BlogEditor",
-        component: async () => await import("@/views/BlogEditor/BlogEditor.vue")
-      },
-      {
         path: "/article-editor",
         name: "ArticleEditor",
         component: async () =>
           await import("@/views/ArticleEditor/ArticleEditor.vue")
+      },
+      {
+        path: "/blog/:id",
+        name: "Blog",
+        component: async () => await import("@/views/BlogDetail/BlogDetail.vue")
+      },
+      {
+        path: "/blog/:id/edit",
+        name: "BlogEdit",
+        component: async () => await import("@/views/BlogEditor/BlogEditor.vue")
       }
     ]
   }

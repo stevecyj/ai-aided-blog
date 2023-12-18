@@ -13,11 +13,6 @@ export const constantRoutes: RouteRecordRaw[] = [
     // redirect: "/dashboard",
     children: [
       {
-        path: "/login",
-        name: "Login",
-        component: async () => await import("@/views/Login/LoginView.vue")
-      },
-      {
         path: "/register",
         name: "Register",
         component: async () => await import("@/views/Register/RegisterView.vue")
@@ -45,15 +40,15 @@ export const constantRoutes: RouteRecordRaw[] = [
         component: async () => await import("@/views/BlogEditor/BlogEditor.vue")
       }
     ]
+  },
+  {
+    path: "/login",
+    name: "Login",
+    component: async () => await import("@/views/Login/LoginView.vue"),
+    meta: {
+      title: "Login"
+    }
   }
-  // {
-  //   path: "/login",
-  //   name: "Login",
-  //   component: async () => await import("@/views/login/index.vue"),
-  //   meta: {
-  //     title: "Login"
-  //   }
-  // },
   // {
   //   path: "/404",
   //   name: "404",

@@ -13,22 +13,31 @@ export const constantRoutes: RouteRecordRaw[] = [
     // redirect: "/dashboard",
     children: [
       {
-        path: "/article",
-        name: "Article",
-        component: async () => await import("@/views/article/ArticleIndex.vue"),
-        meta: {
-          title: "Article",
-          icon: "article"
-        }
+        path: "/login",
+        name: "Login",
+        component: async () => await import("@/views/Login/LoginView.vue")
       },
       {
-        path: "/member",
-        name: "Member",
-        component: async () => await import("@/views/member/MemberIndex.vue"),
-        meta: {
-          title: "Member",
-          icon: "member"
-        }
+        path: "/register",
+        name: "Register",
+        component: async () => await import("@/views/Register/RegisterView.vue")
+      },
+      {
+        path: "/user-profile",
+        name: "UserProfile",
+        component: async () =>
+          await import("@/views/UserProfile/UserProfile.vue")
+      },
+      {
+        path: "/blog-editor",
+        name: "BlogEditor",
+        component: async () => await import("@/views/BlogEditor/BlogEditor.vue")
+      },
+      {
+        path: "/article-editor",
+        name: "ArticleEditor",
+        component: async () =>
+          await import("@/views/ArticleEditor/ArticleEditor.vue")
       }
     ]
   }

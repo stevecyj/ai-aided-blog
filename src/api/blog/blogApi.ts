@@ -6,7 +6,7 @@ import { type AxiosResponse } from "axios";
 // 獲取部落格列表
 export const getBlogList = async (): Promise<AxiosResponse> => {
   try {
-    return await axios.get("/api/blog-list");
+    return await axios.get("/blog-list");
   } catch (error) {
     console.error(error);
     throw new Error("Error getting blog list");
@@ -121,6 +121,7 @@ export const testApi = async (): Promise<AxiosResponse> => {
 // 其他部落格相關的 API 函數，根據需求添加
 
 export default {
+  getBlogList,
   createBlog,
   editBlog,
   deleteBlog,

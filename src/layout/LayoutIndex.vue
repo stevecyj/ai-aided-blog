@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import { onMounted } from "vue";
 import Header from "@/components/Header/HeaderIndex.vue";
-import { testApi } from "@/api/blog/blogApi.ts";
+import { testApi, getBlogList } from "@/api/blog/blogApi.ts";
 
 onMounted(async () => {
   await testApi();
+  await getBlogList();
 });
 </script>
 

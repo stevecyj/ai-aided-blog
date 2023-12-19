@@ -6,7 +6,7 @@ import axios, {
 
 // 創建一個 Axios 實例
 const axiosInstance: AxiosInstance = axios.create({
-  baseURL: "https://api.example.com", // 替換為您的 API 基本 URL
+  baseURL: "/api", // 替換為您的 API 基本 URL
   timeout: 10000 // 請求超時時間（毫秒）
 });
 

@@ -11,7 +11,7 @@ export const createBlog = async (
     return await axios.post("/api/create-blog", blogData);
   } catch (error) {
     console.error(error);
-    throw error;
+    throw new Error("Error creating blog");
   }
 };
 
@@ -24,7 +24,7 @@ export const editBlog = async (
     return await axios.put(`/api/edit-blog/${blogId}`, blogData);
   } catch (error) {
     console.error(error);
-    throw error;
+    throw new Error("Error editing blog");
   }
 };
 
@@ -34,7 +34,7 @@ export const deleteBlog = async (blogId: number): Promise<AxiosResponse> => {
     return await axios.delete(`/api/delete-blog/${blogId}`);
   } catch (error) {
     console.error(error);
-    throw error;
+    throw new Error("Error deleting blog");
   }
 };
 
@@ -46,7 +46,7 @@ export const getBlogDetails = async (
     return await axios.get(`/api/blog-details/${blogId}`);
   } catch (error) {
     console.error(error);
-    throw error;
+    throw new Error("Error getting blog details");
   }
 };
 
@@ -58,7 +58,7 @@ export const likeArticle = async (
     return await axios.post(`/api/like-article/${articleId}`);
   } catch (error) {
     console.error(error);
-    throw error;
+    throw new Error("Error liking article");
   }
 };
 
@@ -70,7 +70,7 @@ export const unlikeArticle = async (
     return await axios.delete(`/api/unlike-article/${articleId}`);
   } catch (error) {
     console.error(error);
-    throw error;
+    throw new Error("Error unliking article");
   }
 };
 
@@ -82,7 +82,7 @@ export const favoriteArticle = async (
     return await axios.post(`/api/favorite-article/${articleId}`);
   } catch (error) {
     console.error(error);
-    throw error;
+    throw new Error("Error favoriting article");
   }
 };
 
@@ -94,7 +94,7 @@ export const unfavoriteArticle = async (
     return await axios.delete(`/api/unfavorite-article/${articleId}`);
   } catch (error) {
     console.error(error);
-    throw error;
+    throw new Error("Error unfavoriting article");
   }
 };
 

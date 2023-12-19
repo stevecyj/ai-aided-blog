@@ -12,7 +12,7 @@ export const commentArticle = async (
     return await axios.post(`/api/comment-article/${articleId}`, commentData);
   } catch (error) {
     console.error(error);
-    throw error;
+    throw new Error("Error commenting on the article");
   }
 };
 
@@ -24,7 +24,7 @@ export const deleteComment = async (
     return await axios.delete(`/api/delete-comment/${commentId}`);
   } catch (error) {
     console.error(error);
-    throw error;
+    throw new Error("Error deleting the comment");
   }
 };
 
@@ -36,7 +36,7 @@ export const getCommentsForArticle = async (
     return await axios.get(`/api/comments-for-article/${articleId}`);
   } catch (error) {
     console.error(error);
-    throw error;
+    throw new Error("Error getting comments for the article");
   }
 };
 
@@ -48,7 +48,7 @@ export const likeComment = async (
     return await axios.post(`/api/like-comment/${commentId}`);
   } catch (error) {
     console.error(error);
-    throw error;
+    throw new Error("Error liking the comment");
   }
 };
 
@@ -60,7 +60,7 @@ export const unlikeComment = async (
     return await axios.delete(`/api/unlike-comment/${commentId}`);
   } catch (error) {
     console.error(error);
-    throw error;
+    throw new Error("Error unliking the comment");
   }
 };
 

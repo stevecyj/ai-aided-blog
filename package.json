@@ -9,7 +9,7 @@
     "preview": "vite preview",
     "lint:script": "eslint --ext .js,.jsx,.ts,.tsx --fix --quiet ./src",
     "lint": "npm run lint:script && npm run lint:style",
-    "lint:style": "stylelint --fix \"src/**/*.{css,scss}\"",
+    "lint:style": "stylelint --fix .stylelintrc.cjs \"src/**/*.{css,scss,vue}\"",
     "prepare": "husky install"
   },
   "lint-staged": {

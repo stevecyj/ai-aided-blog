@@ -23,12 +23,13 @@ module.exports = {
       {
         ignoreAtRules: ["unocss"]
       }
-    ]
+    ],
+    "no-empty-source": null,
   },
   overrides: [
     {
          // Ensure Vue files aren't treated solely as html or scss
-        files: ["*.vue"],
+        files: ["*.vue","**/*.vue"],
         customSyntax: "postcss-html"
     },
 ],

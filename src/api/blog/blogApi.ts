@@ -3,6 +3,16 @@ import { type AxiosResponse } from "axios";
 
 // 定義部落格相關的 API 接口
 
+// 獲取部落格列表
+export const getBlogList = async (): Promise<AxiosResponse> => {
+  try {
+    return await axios.get("/api/blog-list");
+  } catch (error) {
+    console.error(error);
+    throw new Error("Error getting blog list");
+  }
+};
+
 // 創建部落格
 export const createBlog = async (
   blogData: Record<string, unknown>

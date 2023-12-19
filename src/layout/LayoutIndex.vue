@@ -5,7 +5,8 @@ import { testApi, getBlogList } from "@/api/blog/blogApi.ts";
 
 onMounted(async () => {
   await testApi();
-  await getBlogList();
+  const res = await getBlogList();
+  console.log("getBlogList res: ", res);
 });
 </script>
 

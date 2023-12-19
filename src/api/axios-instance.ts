@@ -25,7 +25,13 @@ axiosInstance.interceptors.request.use(
 axiosInstance.interceptors.response.use(
   (response: AxiosResponse) => {
     // 在響應成功時，可以在這裡對響應進行處理
-    return response.data;
+    // Determine success based on whether status is 'success'
+
+    if (response.data.status === "success") {
+      return response.data;
+    } else {
+      return Promise.reject(response.data);
+    }
   },
   async (error: AxiosError) => {
     // 在響應出錯時，可以在這裡處理錯誤

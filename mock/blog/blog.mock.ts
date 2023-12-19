@@ -5,7 +5,7 @@ export default defineMock([
     url: "/api/test",
     body: {
       code: 200,
-      message: "success",
+      status: "success",
       data: {
         name: "vben",
         age: 18
@@ -18,7 +18,7 @@ export default defineMock([
     method: "GET",
     body: {
       code: 200,
-      message: "success",
+      status: "success",
       data: {
         total: 100,
         list: [

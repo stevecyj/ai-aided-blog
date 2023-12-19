@@ -6,6 +6,7 @@ import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
 import path from "path";
 import viteEslint from "vite-plugin-eslint";
 import viteStylelint from "vite-plugin-stylelint";
+import mockDevServerPlugin from "vite-plugin-mock-dev-server";
 
 const resolve = (str: string): string =>
   normalizePath(path.resolve(__dirname, str));
@@ -23,7 +24,8 @@ export default defineConfig({
     }),
     Components({
       resolvers: [ElementPlusResolver()]
-    })
+    }),
+    mockDevServerPlugin()
   ],
   css: {
     preprocessorOptions: {
@@ -35,6 +37,15 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": resolve("src")
+    }
+  },
+  server: {
+    proxy: {
+      "^/api": {
+        target: "http://example.com",
+        changeOrigin: true
+        // rewrite: (path) => path.replace(/^\/api/, "")
+      }
     }
   }
 });

@@ -98,6 +98,16 @@ export const unfavoriteArticle = async (
   }
 };
 
+// test api
+export const testApi = async (): Promise<AxiosResponse> => {
+  try {
+    return await axios.get("/test");
+  } catch (error) {
+    console.error(error);
+    throw new Error("Error unfavoriting article");
+  }
+};
+
 // 其他部落格相關的 API 函數，根據需求添加
 
 export default {
@@ -108,5 +118,6 @@ export default {
   likeArticle,
   unlikeArticle,
   favoriteArticle,
-  unfavoriteArticle
+  unfavoriteArticle,
+  testApi
 };

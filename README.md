@@ -6,7 +6,7 @@ This template should help get you started developing with Vue 3 and TypeScript i
 
 ## Recommended IDE Setup
 
-* [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
 
 ## Type Support For `.vue` Imports in TS
 
@@ -100,24 +100,24 @@ parserOptions: {
 ![CssSyntaxError](./img-read/css-syntax-error.png)
 
 > [vite] Internal server error:
-src/components/Uno/UnoIndex.vue
- 15:1  ✖  Unknown word  CssSyntaxError
+> src/components/Uno/UnoIndex.vue
+> 15:1 ✖ Unknown word CssSyntaxError
 
-* 原因：Stylelint是14版本不兼容vue3，Stylelint降级到13版本
-* <https://github.com/torchbox/stylelint-config-torchbox/issues/30>
+- 原因：Stylelint是14版本不兼容vue3，Stylelint降级到13版本
+- <https://github.com/torchbox/stylelint-config-torchbox/issues/30>
 
 ```js
 // .stylelintrc.cjs
 module.exports = {
-    // See https://github.com/torchbox/stylelint-config-torchbox for rules.
-    extends: 'stylelint-config-torchbox',
-    overrides: [
-        {
-             // Ensure Vue files aren't treated solely as html or scss
-            files: ["*.vue"],
-            customSyntax: "postcss-html"
-        },
-    ],
+  // See https://github.com/torchbox/stylelint-config-torchbox for rules.
+  extends: "stylelint-config-torchbox",
+  overrides: [
+    {
+      // Ensure Vue files aren't treated solely as html or scss
+      files: ["*.vue"],
+      customSyntax: "postcss-html"
+    }
+  ]
 };
 ```
 
@@ -216,4 +216,48 @@ parser
 
 ```bash
 pnpm i -D @typescript-eslint/parser@latest
+```
+
+## stylelint
+
+- `"lint:style": "stylelint \"src/**/*.{css,scss,vue}\" --cache --fix",`
+
+```js
+// .stylelintrc.js
+module.exports = {
+  // 注册 stylelint 的 prettier 插件
+  plugins: ["stylelint-prettier","stylelint-order"],
+  // 继承一系列规则集合
+  extends: [
+    // standard 规则集合
+    "stylelint-config-standard",
+    // standard 规则集合的 scss 版本
+    "stylelint-config-standard-scss",
+    // 样式属性顺序规则
+    "stylelint-config-recess-order",
+    // 接入 Prettier 规则
+    "stylelint-config-prettier",
+    "stylelint-prettier/recommended"
+  ],
+  // 配置 rules
+  rules: {
+    // 开启 Prettier 自动格式化功能
+    "prettier/prettier": true,
+    "scss/at-rule-no-unknown": [
+      true,
+      {
+        ignoreAtRules: ["unocss"]
+      }
+    ],
+    "no-empty-source": null,
+    "declaration-empty-line-before": null,
+  },
+  overrides: [
+    {
+         // Ensure Vue files aren't treated solely as html or scss
+        files: ["*.vue","**/*.vue"],
+        customSyntax: "postcss-html"
+    },
+],
+};
 ```

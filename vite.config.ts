@@ -28,6 +28,7 @@ export default defineConfig({
     mockDevServerPlugin()
   ],
   css: {
+    devSourcemap: true,
     preprocessorOptions: {
       scss: {
         additionalData: `@import "${variablePath}";`

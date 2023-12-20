@@ -3,7 +3,6 @@ import router from "./router";
 import * as ElementPlusIconsVue from "@element-plus/icons-vue";
 import "./style.css";
 import "element-plus/dist/index.css";
-import "@unocss/reset/eric-meyer.css";
 import App from "./App.vue";
 
 const app = createApp(App);

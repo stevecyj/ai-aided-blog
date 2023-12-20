@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { onMounted } from "vue";
-// import Header from "@/components/Header/HeaderIndex.vue";
 import TopNavbar from "@/components/Navbar/TopNavbar.vue";
 import { testApi, getBlogList } from "@/api/blog/blogApi.ts";
 
@@ -12,18 +11,39 @@ onMounted(async () => {
 </script>
 
 <template>
-  <!-- <Header /> -->
-  <TopNavbar />
-  <div>this is Layout</div>
-  <el-row class="mb-4">
-    <el-button>Default</el-button>
-    <el-button type="primary">Primary</el-button>
-    <el-button type="success">Success</el-button>
-    <el-button type="info">Info</el-button>
-    <el-button type="warning">Warning</el-button>
-    <el-button type="danger">Danger</el-button>
-  </el-row>
-  <router-view />
+  <div class="app">
+    <!-- 頂部導航欄 -->
+    <top-navbar />
+
+    <!-- 主體部分 -->
+    <div class="main">
+      <div class="container">
+        Main
+        <!-- 路由視圖 -->
+        <router-view></router-view>
+      </div>
+    </div>
+  </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: #f0f0f0;
+}
+
+.container {
+  width: 1000px;
+  padding: 20px;
+  background-color: #fff;
+}
+</style>

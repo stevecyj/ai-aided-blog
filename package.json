@@ -7,9 +7,10 @@
     "dev": "vite --open",
     "build": "vue-tsc && vite build",
     "preview": "vite preview",
+    "format": "prettier --write \"./**/*.{html,vue,ts,js,json,md}\"",
     "lint:script": "eslint --ext .js,.jsx,.ts,.tsx --fix --quiet ./src",
     "lint": "npm run lint:script && npm run lint:style",
-    "lint:style": "stylelint --fix .stylelintrc.cjs \"src/**/*.{css,scss,vue}\"",
+    "lint:style": "stylelint \"src/**/*.{css,scss,vue}\" --cache --fix",
     "prepare": "husky install"
   },
   "lint-staged": {

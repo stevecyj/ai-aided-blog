@@ -7,14 +7,14 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
-    ElButton: typeof import('element-plus/es')['ElButton']
-    ElCol: typeof import('element-plus/es')['ElCol']
-    ElHeader: typeof import('element-plus/es')['ElHeader']
-    ElInput: typeof import('element-plus/es')['ElInput']
-    ElLink: typeof import('element-plus/es')['ElLink']
-    ElMenu: typeof import('element-plus/es')['ElMenu']
-    ElMenuItem: typeof import('element-plus/es')['ElMenuItem']
-    ElRow: typeof import('element-plus/es')['ElRow']
+    ElButton: (typeof import("element-plus/es"))["ElButton"]
+    ElCol: (typeof import("element-plus/es"))["ElCol"]
+    ElHeader: (typeof import("element-plus/es"))["ElHeader"]
+    ElInput: (typeof import("element-plus/es"))["ElInput"]
+    ElLink: (typeof import("element-plus/es"))["ElLink"]
+    ElMenu: (typeof import("element-plus/es"))["ElMenu"]
+    ElMenuItem: (typeof import("element-plus/es"))["ElMenuItem"]
+    ElRow: (typeof import("element-plus/es"))["ElRow"]
     HeaderIndex: typeof import('./src/components/Header/HeaderIndex.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']

@@ -27,7 +27,7 @@
   width: 100%;
   padding: 10px 20px;
   color: #fff;
-  background-color: #333;
+  background-color: #f0f0f0;
 }
 
 .navbar-left {
@@ -37,7 +37,10 @@
 
 .logo {
   margin-right: 20px;
-  text-decoration: none;
+
+  a {
+    text-decoration: none;
+  }
 }
 
 .navbar-right {
@@ -46,7 +49,6 @@
 }
 
 .login-link {
-  color: #fff;
   text-decoration: none;
 }
 </style>

@@ -33,6 +33,7 @@
 .navbar-left {
   display: flex;
   align-items: center;
+  padding-left: 20px;
 }
 
 .logo {
@@ -46,6 +47,7 @@
 .navbar-right {
   display: flex;
   align-items: center;
+  padding-right: 20px;
 }
 
 .login-link {

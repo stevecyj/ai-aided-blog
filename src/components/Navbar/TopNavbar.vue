@@ -4,11 +4,9 @@
   <div class="navbar">
     <div class="navbar-left">
       <!-- 左側 logo -->
-      <img
-        class="logo"
-        src="/src/assets/blog.png"
-        alt="Logo"
-      />
+      <div class="logo">
+        <RouterLink to="/"><h1>TechBlog</h1></RouterLink>
+      </div>
     </div>
     <div class="navbar-right">
       <!-- 登入連結 -->
@@ -38,9 +36,8 @@
 }
 
 .logo {
-  width: 40px;
-  height: 40px;
   margin-right: 20px;
+  text-decoration: none;
 }
 
 .navbar-right {

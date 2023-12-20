@@ -25,6 +25,7 @@ module.exports = {
       }
     ],
     "no-empty-source": null,
+    "declaration-empty-line-before": null,
   },
   overrides: [
     {

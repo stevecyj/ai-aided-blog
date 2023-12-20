@@ -1,6 +1,7 @@
 import { createApp } from "vue";
 import router from "./router";
 import * as ElementPlusIconsVue from "@element-plus/icons-vue";
+import "@unocss/reset/eric-meyer.css";
 import "./style.css";
 import "element-plus/dist/index.css";
 import App from "./App.vue";
